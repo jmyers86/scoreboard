@@ -1,7 +1,9 @@
 function main() {
-  if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
-  }
+  const inputOne = document.querySelector(`.team-one input`)
+  const teamOneHeading = document.querySelector('.team-one h2')
+  inputOne.addEventListener('input', () => {
+    teamOneHeading.textContent = inputOne.value
+  })
 }
 
 document.addEventListener('DOMContentLoaded', main)
