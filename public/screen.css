@@ -29,7 +29,7 @@ section {
   min-width: 20rem;
   border: thin solid #7c7c7c;
   border-radius: 0.3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -45,6 +45,12 @@ section h3 {
   margin: 1rem 0;
   font-family: Monospace;
   font-size: 3rem;
+}
+
+.reset {
+  margin: auto;
+  min-width: auto;
+  width: min-content;
 }
 
 fieldset {

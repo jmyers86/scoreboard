@@ -1,3 +1,4 @@
+// @ts
 function main() {
   // Assign an event to the input fields to
   // automatically change the team's name
@@ -15,7 +16,7 @@ function main() {
   //   teamTwoHeading.textContent = inputTwo.value
   // })
 
-  const sections = document.querySelectorAll('section')
+  const sections = document.querySelectorAll('main section')
   sections.forEach(section => {
     let score = 0
 
@@ -24,17 +25,35 @@ function main() {
     const scoreHeading = section.querySelector('h3')
     const plusButton = section.querySelector('.add')
     const subtractButton = section.querySelector('.subtract')
+    const resetButton = document.querySelector('.reset button')
 
     input.addEventListener('input', () => {
       teamHeading.textContent = input.value
     })
 
     plusButton.addEventListener('click', () => {
-      scoreHeading.textContent = ++score
+      if (score < 21) {
+        scoreHeading.textContent = ++score
+      } else {
+        window.alert('Score cannot be higher than 21')
+      }
+      if (score === 21) {
+        window.alert(`Congratulations! ${teamHeading.textContent} has won!`)
+      }
     })
 
     subtractButton.addEventListener('click', () => {
-      scoreHeading.textContent = --score
+      if (score > 0) {
+        scoreHeading.textContent = --score
+      } else {
+        window.alert('Score cannot be lower than 0')
+      }
+    })
+
+    resetButton.addEventListener('click', () => {
+      console.log('reset')
+      scoreHeading.textContent = '0'
+      score = 0
     })
   })
 }
